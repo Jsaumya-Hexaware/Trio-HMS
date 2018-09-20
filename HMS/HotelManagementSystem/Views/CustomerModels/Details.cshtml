@@ -1,0 +1,66 @@
+﻿@model HotelManagementSystem.Models.CustomerModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cust_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cust_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cust_PhNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cust_PhNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cust_Addr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cust_Addr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wallet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wallet)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Cust_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
