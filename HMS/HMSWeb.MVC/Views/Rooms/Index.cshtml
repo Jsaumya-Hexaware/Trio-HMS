@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProjectClassLibrary.Room>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/DashBoardMaster.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomsAvailable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Costpernight)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomsAvailable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Costpernight)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RoomNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RoomNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RoomNo })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,15 @@
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\HMS.Services.dll.config
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\HMS.Services.dll
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\HMS.Services.pdb
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\EntityFramework.dll
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\EntityFramework.SqlServer.dll
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\ProjectClassLibrary.dll
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\ProjectClassLibrary.pdb
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\ProjectClassLibrary.dll.config
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\EntityFramework.xml
+E:\asp.net_Training\HMS\HMS.Services\bin\Debug\EntityFramework.SqlServer.xml
+E:\asp.net_Training\HMS\HMS.Services\obj\Debug\HMS.Services.csprojAssemblyReference.cache
+E:\asp.net_Training\HMS\HMS.Services\obj\Debug\HMS.Services.csproj.CoreCompileInputs.cache
+E:\asp.net_Training\HMS\HMS.Services\obj\Debug\HMS.Services.csproj.CopyComplete
+E:\asp.net_Training\HMS\HMS.Services\obj\Debug\HMS.Services.dll
+E:\asp.net_Training\HMS\HMS.Services\obj\Debug\HMS.Services.pdb

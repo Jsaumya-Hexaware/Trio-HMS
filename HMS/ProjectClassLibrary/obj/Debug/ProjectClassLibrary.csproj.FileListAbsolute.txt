@@ -1,0 +1,12 @@
+E:\asp.net_Training\HMS\ProjectClassLibrary\bin\Debug\ProjectClassLibrary.dll.config
+E:\asp.net_Training\HMS\ProjectClassLibrary\bin\Debug\ProjectClassLibrary.dll
+E:\asp.net_Training\HMS\ProjectClassLibrary\bin\Debug\ProjectClassLibrary.pdb
+E:\asp.net_Training\HMS\ProjectClassLibrary\bin\Debug\EntityFramework.dll
+E:\asp.net_Training\HMS\ProjectClassLibrary\bin\Debug\EntityFramework.SqlServer.dll
+E:\asp.net_Training\HMS\ProjectClassLibrary\bin\Debug\EntityFramework.xml
+E:\asp.net_Training\HMS\ProjectClassLibrary\bin\Debug\EntityFramework.SqlServer.xml
+E:\asp.net_Training\HMS\ProjectClassLibrary\obj\Debug\ProjectClassLibrary.csprojAssemblyReference.cache
+E:\asp.net_Training\HMS\ProjectClassLibrary\obj\Debug\ProjectClassLibrary.csproj.CoreCompileInputs.cache
+E:\asp.net_Training\HMS\ProjectClassLibrary\obj\Debug\ProjectClassLibrary.csproj.CopyComplete
+E:\asp.net_Training\HMS\ProjectClassLibrary\obj\Debug\ProjectClassLibrary.dll
+E:\asp.net_Training\HMS\ProjectClassLibrary\obj\Debug\ProjectClassLibrary.pdb
