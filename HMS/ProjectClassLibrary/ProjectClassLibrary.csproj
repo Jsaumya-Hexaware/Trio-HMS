@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6F74FB28-C4C0-4017-BCE5-20308A746BF9}</ProjectGuid>
+    <ProjectGuid>{485F8EE0-6E22-4736-8BC4-84A1DE8B6877}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProjectClassLibrary</RootNamespace>
@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application.cs">
+    <Compile Include="Booking.cs">
       <DependentUpon>ProjectDataAccess.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">

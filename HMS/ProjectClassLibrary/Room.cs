@@ -17,15 +17,16 @@ namespace ProjectClassLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Room()
         {
-            this.Applications = new HashSet<Application>();
+            this.Bookings = new HashSet<Booking>();
         }
     
-        public int RoomNo { get; set; }
+        public int RoomId { get; set; }
         public string RoomType { get; set; }
-        public Nullable<int> RoomsAvailable { get; set; }
-        public int Costpernight { get; set; }
+        public string Description { get; set; }
+        public decimal Cost { get; set; }
+        public int RoomStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Application> Applications { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace ProjectClassLibrary
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Application> Applications { get; set; }
+        public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
     }

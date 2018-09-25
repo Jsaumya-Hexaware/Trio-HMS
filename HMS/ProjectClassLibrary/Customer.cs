@@ -17,7 +17,7 @@ namespace ProjectClassLibrary
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            this.Applications = new HashSet<Application>();
+            this.Bookings = new HashSet<Booking>();
         }
     
         public int CustomerId { get; set; }
@@ -30,6 +30,6 @@ namespace ProjectClassLibrary
         public long Wallet { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Application> Applications { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

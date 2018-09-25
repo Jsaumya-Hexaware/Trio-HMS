@@ -1,24 +1,85 @@
 ﻿@*<!DOCTYPE html>
-
-    <html>
+    <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>DashBoard</title>
+        <title>My Dashboard </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="~/Content/MyDashBoard.css" rel="stylesheet" />
+        <link href="~/Content/DropDownButton.css" rel="stylesheet" />
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        @RenderSection("Scripts", false);
     </head>
+
     <body>
-        <div style="background-color:aqua;color:azure">
-            @RenderSection("MyDashBoard",true)
+
+        <div class="jumbotron">
+            <div class="container text-center">
+                <h1>My DashBoard</h1>
+                <p>Hello @Session["name"].ToString() !!!!!!</p>
+                <p>Welcome to Hotel Management</p>
+            </div>
         </div>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+
+                            <div class="dropdown">
+                                <button class="dropbtn"><span class="glyphicon glyphicon-user"></span></button>
+                                <div class="dropdown-content">
+                                    <a href="@Url.Action("Edit","Customers", new {id = @Session["id"].ToString() })">Edit Account</a>
+                                    <a href="@Url.Action("PasEdit","Customers", new {id = @Session["id"].ToString() })">Change Password</a>
+                                    <a href="@Url.Action("Logout","HMSCustomer")">Logout</a>
+                                </div>
+                            </div>
+
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div>
             @RenderBody()
         </div>
+
+        <footer class="container-fluid text-center">
+            <p>Hotel Management Copyright</p>
+            <form class="form-inline">
+                Get deals:
+                <input type="email" class="form-control" size="50" placeholder="Email Address">
+                <button type="button" class="btn btn-danger">Sign Up</button>
+            </form>
+        </footer>
+
     </body>
     </html>*@
+
+
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,46 +87,89 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    @RenderSection("Scripts", false);
 </head>
+<body style="background-image: url('https://www.pvparadiserentals.com/wp-content/uploads/2017/10/casa-papelillos-cover.jpg');">
+    @*<body style="background-image: url('../../Content/db.jpg');">*@
 
-<body>
+    <link href="~/Content/dashboardStylesheet.css" rel="stylesheet" />
+    <link href="~/Content/DropDownButton.css" rel="stylesheet" />
+    <style>
+        .jumbotron {
+            margin-top: 15px;
+            padding: 17px;
+            color: #C9A891;
+            background-size: cover;
+            background-color: #2B1B17;
+            opacity: 0.1;
+            font-family: 'Great Vibes', cursive;
+            font-size: xx-large;
+            opacity: 0.7;
+        }
+        p {
+        color:aliceblue;
+        }
+
+
+
+    </style>
 
     <div class="jumbotron">
         <div class="container text-center">
-            <h1>My DashBoard</h1>
-            <p>Hello @Session["name"].ToString() !!!!!!</p>
-            <p>Welcome to Manchester King</p>
+            <h1>Welcome to Shangri La</h1>
+            <p>Hello @Session["name"].ToString() !</p>
         </div>
     </div>
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="@Url.Action("Index","Home")">
-                <span class="glyphicon glyphicon-home"></span>Logo 
-                </a>
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>*@
+                @*<a class="navbar-brand" href="@Url.Action("Index","Home")">
+                        <span class="glyphicon glyphicon-home"></span>Logo
+                    </a>*@
             </div>
+
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active">
+                        <div>
+                            <button class="but" onclick="location.href='@Url.Action("CustomerHome", "HMSCustomer")'"> <span class="glyphicon glyphicon-home"></span></button>   @*<a href="#">Home</a>*@
+                        </div>
 
+                    </li>
+
+                    <li class=" active">
+
+                        <div class="dropdown">
+                            <button class="but">Types Of Rooms</button>
+                            <div class="dropdown-content">
+                                <a href="@Url.Action("SuperDeluex","Home")">Super Deluxe</a>
+                                <a href="@Url.Action("Deluex","Home")">Deluxe</a>
+                                <a href="@Url.Action("Normal","Home")">Normal</a>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <button class="but" onclick="location.href='@Url.Action("Index","Bookings")'">My Bookings</button>
+
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-
-                            <div class="dropdown">
-                                <button class="dropbtn"><span class="glyphicon glyphicon-user"></span>@Session["name"].ToString()</button>
-                                <div class="dropdown-content">
-                                    <a href="#">Link 1</a>
-                                    <a href="@Url.Action("Create","Customers")">Edit Account</a>
-                                    <a href="@Url.Action("Logout","HMSCustomer")">Logout</a>
-                                </div>
+                        <div class="dropdown" align="left">
+                            <button class="but" align="left"><span class="glyphicon glyphicon-user"></span></button>
+                            <div class="dropdown-content" align="left">
+                                <a href="@Url.Action("Edit","Customers", new {id = @Session["id"].ToString() })">Edit Account</a>
+                                <a href="@Url.Action("PasEdit","Customers", new {id = @Session["id"].ToString() })">Change Password</a>
+                                <a href="@Url.Action("Logout","HMSCustomer")">Logout</a>
                             </div>
+                        </div>
 
 
                     </li>
@@ -77,15 +181,5 @@
         @RenderBody()
     </div>
 
-    <footer class="container-fluid text-center">
-        <p>Manchester King Copyright</p>
-        <form class="form-inline">
-            Get deals:
-            <input type="email" class="form-control" size="50" placeholder="Email Address">
-            <button type="button" class="btn btn-danger">Sign Up</button>
-        </form>
-    </footer>
-
 </body>
 </html>
-

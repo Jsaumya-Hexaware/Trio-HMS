@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ProjectClassLibrary.Booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/DashBoardMaster.cshtml";
+}
+<style>
+    th, td {
+        border-bottom: 1px solid #ddd;
+        opacity: 0.7;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    td {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.checkIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.payment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room.RoomType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model=>model.RoomId)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room.RoomType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.RoomId)
+        </td>
+    
+    </tr>
+}
+
+</table>

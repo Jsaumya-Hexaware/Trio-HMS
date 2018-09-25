@@ -10,6 +10,8 @@ namespace HMS.Services
    public interface ICustomer
     {
         Customer Validate(Customer model);
-       
+        Booking Overlaps(Booking model);
+        bool ChangePas(Customer cust, int id);
+
     }
 }

@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ff94f9e8811548f897a47712119425f9" Name="Diagram1">
-        <EntityTypeShape EntityType="hmsprojectModel.Application" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="hmsprojectModel.Customer" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="hmsprojectModel.Room" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <AssociationConnector Association="hmsprojectModel.FK__Applicati__Custo__0BC6C43E" ManuallyRouted="false" />
-        <AssociationConnector Association="hmsprojectModel.FK__Applicati__RoomN__0CBAE877" ManuallyRouted="false" />
+      <Diagram DiagramId="741af8ade83b4ef2acabdbf79a0ea439" Name="Diagram1">
+        <EntityTypeShape EntityType="hmsprojectModel.Booking" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsprojectModel.Customer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsprojectModel.Room" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="hmsprojectModel.FK_Booking_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsprojectModel.FK_Booking_Room" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

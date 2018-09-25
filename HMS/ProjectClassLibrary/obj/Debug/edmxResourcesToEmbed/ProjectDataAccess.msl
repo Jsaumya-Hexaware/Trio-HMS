@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="hmsprojectModelStoreContainer" CdmEntityContainer="hmsprojectEntities">
-    <EntitySetMapping Name="Applications">
-      <EntityTypeMapping TypeName="hmsprojectModel.Application">
-        <MappingFragment StoreEntitySet="Application">
-          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="hmsprojectModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="BookedOn" ColumnName="BookedOn" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
           <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-          <ScalarProperty Name="RoomNo" ColumnName="RoomNo" />
-          <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
-          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
-          <ScalarProperty Name="Startdate" ColumnName="Startdate" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="checkIn" ColumnName="checkIn" />
+          <ScalarProperty Name="checkOut" ColumnName="checkOut" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -32,10 +33,11 @@
     <EntitySetMapping Name="Rooms">
       <EntityTypeMapping TypeName="hmsprojectModel.Room">
         <MappingFragment StoreEntitySet="Room">
-          <ScalarProperty Name="RoomNo" ColumnName="RoomNo" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
           <ScalarProperty Name="RoomType" ColumnName="RoomType" />
-          <ScalarProperty Name="RoomsAvailable" ColumnName="RoomsAvailable" />
-          <ScalarProperty Name="Costpernight" ColumnName="Costpernight" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="RoomStatus" ColumnName="RoomStatus" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

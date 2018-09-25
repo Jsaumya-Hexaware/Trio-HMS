@@ -4,19 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="hmsprojectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Application">
+    <Schema Namespace="hmsprojectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Booking">
           <Key>
-            <PropertyRef Name="ApplicationID" />
+            <PropertyRef Name="BookingId" />
           </Key>
-          <Property Name="ApplicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerId" Type="int" />
-          <Property Name="RoomNo" Type="int" />
-          <Property Name="DateOfApplication" Type="date" />
-          <Property Name="NoOfDays" Type="int" />
-          <Property Name="Startdate" Type="date" />
-          <Property Name="EndDate" Type="date" />
-          <Property Name="Payment" Type="bigint" />
+          <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="checkIn" Type="datetime" Nullable="false" />
+          <Property Name="checkOut" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="payment" Type="money" Nullable="false" />
+          <Property Name="BookedOn" Type="datetime" />
+          <Property Name="RoomType" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -33,69 +34,74 @@
         </EntityType>
         <EntityType Name="Room">
           <Key>
-            <PropertyRef Name="RoomNo" />
+            <PropertyRef Name="RoomId" />
           </Key>
-          <Property Name="RoomNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RoomType" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="RoomsAvailable" Type="int" />
-          <Property Name="Costpernight" Type="int" Nullable="false" />
+          <Property Name="RoomId" Type="int" Nullable="false" />
+          <Property Name="RoomType" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="RoomStatus" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Applicati__Custo__0BC6C43E">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+        <Association Name="FK_Booking_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="CustomerId" />
             </Principal>
-            <Dependent Role="Application">
+            <Dependent Role="Booking">
               <PropertyRef Name="CustomerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Applicati__RoomN__0CBAE877">
-          <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+        <Association Name="FK_Booking_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Room">
-              <PropertyRef Name="RoomNo" />
+              <PropertyRef Name="RoomId" />
             </Principal>
-            <Dependent Role="Application">
-              <PropertyRef Name="RoomNo" />
+            <Dependent Role="Booking">
+              <PropertyRef Name="RoomId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="hmsprojectModelStoreContainer">
-          <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Applicati__Custo__0BC6C43E" Association="Self.FK__Applicati__Custo__0BC6C43E">
+          <AssociationSet Name="FK_Booking_Customer" Association="Self.FK_Booking_Customer">
             <End Role="Customer" EntitySet="Customer" />
-            <End Role="Application" EntitySet="Application" />
+            <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
-          <AssociationSet Name="FK__Applicati__RoomN__0CBAE877" Association="Self.FK__Applicati__RoomN__0CBAE877">
+          <AssociationSet Name="FK_Booking_Room" Association="Self.FK_Booking_Room">
             <End Role="Room" EntitySet="Room" />
-            <End Role="Application" EntitySet="Application" />
+            <End Role="Booking" EntitySet="Booking" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="hmsprojectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Application">
+        <EntityType Name="Booking">
           <Key>
-            <PropertyRef Name="ApplicationID" />
+            <PropertyRef Name="BookingId" />
           </Key>
-          <Property Name="ApplicationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerId" Type="Int32" />
-          <Property Name="RoomNo" Type="Int32" />
-          <Property Name="DateOfApplication" Type="DateTime" Precision="0" />
-          <Property Name="NoOfDays" Type="Int32" />
-          <Property Name="Startdate" Type="DateTime" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" />
-          <Property Name="Payment" Type="Int64" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Applicati__Custo__0BC6C43E" FromRole="Application" ToRole="Customer" />
-          <NavigationProperty Name="Room" Relationship="Self.FK__Applicati__RoomN__0CBAE877" FromRole="Application" ToRole="Room" />
+          <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="checkIn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="checkOut" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="payment" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Booking_Customer" FromRole="Booking" ToRole="Customer" />
+          <NavigationProperty Name="Room" Relationship="Self.FK_Booking_Room" FromRole="Booking" ToRole="Room" />
+          <Property Name="BookedOn" Type="DateTime" Precision="3" />
+          <Property Name="RoomType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -109,53 +115,58 @@
           <Property Name="PhoneNo" Type="Int64" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Wallet" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Custo__0BC6C43E" FromRole="Customer" ToRole="Application" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK_Booking_Customer" FromRole="Customer" ToRole="Booking" />
         </EntityType>
         <EntityType Name="Room">
           <Key>
-            <PropertyRef Name="RoomNo" />
+            <PropertyRef Name="RoomId" />
           </Key>
-          <Property Name="RoomNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RoomType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RoomsAvailable" Type="Int32" />
-          <Property Name="Costpernight" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__RoomN__0CBAE877" FromRole="Room" ToRole="Application" />
+          <Property Name="RoomId" Type="Int32" Nullable="false" />
+          <Property Name="RoomType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="RoomStatus" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="Self.FK_Booking_Room" FromRole="Room" ToRole="Booking" />
         </EntityType>
-        <Association Name="FK__Applicati__Custo__0BC6C43E">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+        <Association Name="FK_Booking_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="CustomerId" />
             </Principal>
-            <Dependent Role="Application">
+            <Dependent Role="Booking">
               <PropertyRef Name="CustomerId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Applicati__RoomN__0CBAE877">
-          <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+        <Association Name="FK_Booking_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Room">
-              <PropertyRef Name="RoomNo" />
+              <PropertyRef Name="RoomId" />
             </Principal>
-            <Dependent Role="Application">
-              <PropertyRef Name="RoomNo" />
+            <Dependent Role="Booking">
+              <PropertyRef Name="RoomId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="hmsprojectEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Applications" EntityType="Self.Application" />
+          <EntitySet Name="Bookings" EntityType="Self.Booking" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Rooms" EntityType="Self.Room" />
-          <AssociationSet Name="FK__Applicati__Custo__0BC6C43E" Association="Self.FK__Applicati__Custo__0BC6C43E">
+          <AssociationSet Name="FK_Booking_Customer" Association="Self.FK_Booking_Customer">
             <End Role="Customer" EntitySet="Customers" />
-            <End Role="Application" EntitySet="Applications" />
+            <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
-          <AssociationSet Name="FK__Applicati__RoomN__0CBAE877" Association="Self.FK__Applicati__RoomN__0CBAE877">
+          <AssociationSet Name="FK_Booking_Room" Association="Self.FK_Booking_Room">
             <End Role="Room" EntitySet="Rooms" />
-            <End Role="Application" EntitySet="Applications" />
+            <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -164,17 +175,18 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="hmsprojectModelStoreContainer" CdmEntityContainer="hmsprojectEntities">
-          <EntitySetMapping Name="Applications">
-            <EntityTypeMapping TypeName="hmsprojectModel.Application">
-              <MappingFragment StoreEntitySet="Application">
-                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <EntitySetMapping Name="Bookings">
+            <EntityTypeMapping TypeName="hmsprojectModel.Booking">
+              <MappingFragment StoreEntitySet="Booking">
+                <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+                <ScalarProperty Name="BookedOn" ColumnName="BookedOn" />
+                <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+                <ScalarProperty Name="RoomId" ColumnName="RoomId" />
                 <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
-                <ScalarProperty Name="RoomNo" ColumnName="RoomNo" />
-                <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
-                <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
-                <ScalarProperty Name="Startdate" ColumnName="Startdate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="checkIn" ColumnName="checkIn" />
+                <ScalarProperty Name="checkOut" ColumnName="checkOut" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="payment" ColumnName="payment" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -195,10 +207,11 @@
           <EntitySetMapping Name="Rooms">
             <EntityTypeMapping TypeName="hmsprojectModel.Room">
               <MappingFragment StoreEntitySet="Room">
-                <ScalarProperty Name="RoomNo" ColumnName="RoomNo" />
+                <ScalarProperty Name="RoomId" ColumnName="RoomId" />
                 <ScalarProperty Name="RoomType" ColumnName="RoomType" />
-                <ScalarProperty Name="RoomsAvailable" ColumnName="RoomsAvailable" />
-                <ScalarProperty Name="Costpernight" ColumnName="Costpernight" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="RoomStatus" ColumnName="RoomStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

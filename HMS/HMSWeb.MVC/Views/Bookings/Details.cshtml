@@ -1,0 +1,83 @@
+﻿@model ProjectClassLibrary.Booking
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/DashBoardMaster.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.checkIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.checkOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.checkOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.payment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.payment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room.RoomType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room.RoomType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

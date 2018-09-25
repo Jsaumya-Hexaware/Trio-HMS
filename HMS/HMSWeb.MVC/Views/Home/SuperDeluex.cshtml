@@ -3,72 +3,34 @@
     ViewBag.Title = "SuperDeluex";
     Layout = "~/Views/Shared/DashBoardMaster.cshtml";
 }
-<link href="~/Content/DropDownButton.css" rel="stylesheet" />
 
-<h2 style="text-align:center">SuperDeluex</h2>
 
-<link href="~/Content/DropDownButton.css" rel="stylesheet" />
-<div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-    <div class="dropdown-content">
-        <a href="@Url.Action("SuperDeluex","Home")">Super Deleux</a>
-        <a href="@Url.Action("Deluex","Home")">Deluex</a>
-        <a href="@Url.Action("Normal","Home")">Normal</a>
+<h2 style="text-align:center;color:white">Super Deluex</h2>
+
+
+
+
+
+
+<div style="text-align:center">
+    <div class="container">
+
+        <div class="col-sm-7">
+            <div class="panel panel-primary">
+                <div class="panel-heading">AC</div>
+                <div class="panel-body"><a href="@Url.Action("RoomBook","Bookings",new { type="Super Deluxe",Description="AC",Cost=6000})"><img src="https://cache.radissonhotels.com/ow-cms/rad/images/hotels/GBMAYFAI/new/gbmayfaiKingdlxe650jpg.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+                <div class="panel-footer">Rs.6000/-</div>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <div class="panel panel-danger">
+                <div class="panel-heading">NON-AC</div>
+                <div class="panel-body"><a href="@Url.Action("RoomBook","Bookings",new { type="Super Deluxe",Description="NON-AC",Cost=6500})"><img src="https://www.trumphotels.com/uploads/17418/16/cloudinary/trump-hotels-cloudinary/image/upload/c_fill,w_1666,ar_119:73/v1523308804/vf3tkfhprb6du9ziagid.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+                <div class="panel-footer">Rs.6500/-</div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
-
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-danger">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-success">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-    </div>
-</div><br>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-    </div>
-</div><br><br>

@@ -16,10 +16,13 @@
             @Html.DisplayNameFor(model => model.RoomType)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RoomsAvailable)
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Costpernight)
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomStatus)
         </th>
         <th></th>
     </tr>
@@ -30,15 +33,18 @@
             @Html.DisplayFor(modelItem => item.RoomType)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RoomsAvailable)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Costpernight)
+            @Html.DisplayFor(modelItem => item.Cost)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RoomNo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RoomNo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RoomNo })
+            @Html.DisplayFor(modelItem => item.RoomStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RoomId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RoomId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RoomId })
         </td>
     </tr>
 }

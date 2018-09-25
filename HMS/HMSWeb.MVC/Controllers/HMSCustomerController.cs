@@ -10,9 +10,9 @@ namespace HMSWeb.MVC.Controllers
 {
     public class HMSCustomerController : Controller
     {
-      private readonly  ICustomer cust;
+        private readonly ICustomer cust;
 
-       public HMSCustomerController(ICustomer cust)
+        public HMSCustomerController(ICustomer cust)
         {
             this.cust = cust;
         }
@@ -29,13 +29,14 @@ namespace HMSWeb.MVC.Controllers
         {
             var c = cust.Validate(model);
 
-            if(c==null)
+            if (c == null)
             {
                 ViewBag.Message = "Invalid UserName and Password";
             }
             else
             {
-                Session["name"] =c.Firstname;
+                Session["name"] = c.Firstname;
+                Session["id"] = c.CustomerId;
                 return RedirectToAction("CustomerHome");
             }
 
@@ -51,8 +52,11 @@ namespace HMSWeb.MVC.Controllers
         public ActionResult Logout()
         {
             Session.Abandon();
-            return RedirectToAction("Index","HMSCustomer");
+            return RedirectToAction("Index", "HMSCustomer");
         }
+
+
+
 
 
     }

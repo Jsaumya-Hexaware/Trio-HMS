@@ -12,11 +12,16 @@
 
 /* Add a gray background color and some padding to the footer */
 footer {
-    background-color: #f2f2f2;
-    padding: 25px;
+    background-color: #248bad;
+    padding: 100px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Height of the footer */
+    background: #6cf;
 }
 
-<style >
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -58,5 +63,3 @@ footer {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-
-</style >

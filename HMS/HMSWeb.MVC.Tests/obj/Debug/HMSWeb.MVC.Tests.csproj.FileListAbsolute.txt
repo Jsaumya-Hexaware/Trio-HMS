@@ -34,3 +34,15 @@ E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\obj\Debug\HMSWeb.MVC.Tests.csproj.CoreC
 E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\obj\Debug\HMSWeb.MVC.Tests.csproj.CopyComplete
 E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\obj\Debug\HMSWeb.MVC.Tests.dll
 E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\obj\Debug\HMSWeb.MVC.Tests.pdb
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\WebActivatorEx.dll
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\Unity.Abstractions.dll
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\Unity.Container.dll
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\ProjectClassLibrary.dll
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\HMS.Services.dll
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\Unity.Mvc.dll
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\EntityFramework.dll
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\ProjectClassLibrary.pdb
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\ProjectClassLibrary.dll.config
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\HMS.Services.pdb
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\HMS.Services.dll.config
+E:\asp.net_Training\HMS\HMSWeb.MVC.Tests\bin\Debug\EntityFramework.xml

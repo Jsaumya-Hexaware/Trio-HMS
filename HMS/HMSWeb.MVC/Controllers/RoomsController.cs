@@ -47,7 +47,7 @@ namespace HMSWeb.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "RoomNo,RoomType,RoomsAvailable,Costpernight")] Room room)
+        public async Task<ActionResult> Create([Bind(Include = "RoomId,RoomType,Description,Cost,RoomStatus")] Room room)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace HMSWeb.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "RoomNo,RoomType,RoomsAvailable,Costpernight")] Room room)
+        public async Task<ActionResult> Edit([Bind(Include = "RoomId,RoomType,Description,Cost,RoomStatus")] Room room)
         {
             if (ModelState.IsValid)
             {

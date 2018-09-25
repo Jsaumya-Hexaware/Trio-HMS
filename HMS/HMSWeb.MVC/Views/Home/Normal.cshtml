@@ -4,69 +4,28 @@
     Layout = "~/Views/Shared/DashBoardMaster.cshtml";
 }
 
-<link href="~/Content/DropDownButton.css" rel="stylesheet" />
 
-<h2 style="text-align:center">Normal</h2>
+<h2 style="text-align:center;color:white">Normal</h2>
+   
 
-<link href="~/Content/DropDownButton.css" rel="stylesheet" />
-<div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-    <div class="dropdown-content">
-        <a href="@Url.Action("SuperDeluex","Home")">Super Deleux</a>
-        <a href="@Url.Action("Deluex","Home")">Deluex</a>
-        <a href="@Url.Action("Normal","Home")">Normal</a>
-    </div>
-</div>
+
+
 
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                <div class="panel-heading">AC</div>
+                <div class="panel-body"><a href="@Url.Action("RoomBook","Bookings",new { type="Normal",Description="AC",Cost=3500})"><img src="https://www.peninsula.com/en/-/media/images/hong-kong/rooms/grand-deluxe-harbour-view-room/grand-deluxe-harbor-view-room.jpg?mw=905&hash=6431FC08CD3D3EFC0634CA05DD7A8BC8AFD0EA15" class="img-responsive" style="width:100%" alt="Image"></a></div>
+                <div class="panel-footer">Rs.3500/-</div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-danger">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-success">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                <div class="panel-heading">NON-AC</div>
+                <div class="panel-body"><a href="@Url.Action("RoomBook","Bookings",new { type="Normal",Description="NON-AC",Cost=3000})"><img src="https://bintmushtaq.files.wordpress.com/2009/07/5-star-hotels-dubai1.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+                <div class="panel-footer">Rs.3000/-</div>
             </div>
         </div>
     </div>
 </div><br>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-    </div>
-</div><br><br>
-

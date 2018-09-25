@@ -20,24 +20,32 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RoomsAvailable)
+            @Html.DisplayNameFor(model => model.Description)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.RoomsAvailable)
+            @Html.DisplayFor(model => model.Description)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Costpernight)
+            @Html.DisplayNameFor(model => model.Cost)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Costpernight)
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomStatus)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomNo }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
